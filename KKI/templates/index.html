@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD Prediction</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom styles here */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #f3a0a2, #f7d6a3);
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.5s;
+        }
+
+        .features {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 1s ease-out;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 1s ease-out 0.5s;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="display-4">ADHD Early-Stage Prediction</h1>
+            <p class="lead">Unlock the potential of machine learning to predict ADHD with precision.</p>
+        </div>
+    </section>
+
+    <!-- <section class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="feature-icon fas fa-eye"></i>
+                    <h3>Feature Accomodation</h3>
+                    <p>Our prediction model takes the necessary features responsible for ADHD</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="feature-icon fas fa-chart-line"></i>
+                    <h3>Personal Growth</h3>
+                    <p>Understand ADHD patterns to facilitate personal growth and development.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="feature-icon fas fa-heartbeat"></i>
+                    <h3>Improved Well-being</h3>
+                    <p>Gain insights into managing ADHD symptoms for a better quality of life.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <blockquote>
+                    "It helped me understand my how my symptoms relate to having the type of ADHD a might be sufferng from."
+                </blockquote>
+                <cite>Aditya Sharma</cite>
+            </div>
+            
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="form-container">
+            <h1 class="mt-5">ADHD Prediction</h1>
+            <form action="/predict" method="post" class="mt-3">
+                {% for column in columns %}
+                    <div class="form-group">
+                        <label class="form-label">{{ column }}</label>
+                        <input type="text" name="{{ column }}" class="form-control" required>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict DX</title>
+</head>
+<body>
+    <h1>Predict DX</h1>
+    <form action="/predict" method="post">
+        {% for feature in features %}
+            <label for="{{ feature }}">{{ feature }}</label>
+            <input type="text" name="{{ feature }}" id="{{ feature }}" required>
+            <br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html> -->
+
+
+
